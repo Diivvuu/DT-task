@@ -3,20 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Project Details</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
   </head>
   <body>
     <header>
-      <div>
-        <img src="https://deepthought.education/assets/images/logo/logo.svg" />
+      <div class="left-header">
+        <img
+          src="https://deepthought.education/assets/images/logo/logo.svg"
+          alt="Logo"
+        />
       </div>
-      <div>
-        <img id="home" src="./assets/home icon.svg" />
-        <img id="settings" src="./assets/tools.svg" />
-        <img id="ellipse" src="./assets/Ellipse 56.svg" />
-        <img id="profile" src="./assets/profile.svg" />
+      <div class="right-header">
+        <img id="home" src="./assets/home icon.svg" alt="Home" />
+        <img id="settings" src="./assets/tools.svg" alt="Settings" />
+        <img id="ellipse" src="./assets/Ellipse 56.svg" alt="Ellipse" />
+        <img id="profile" src="./assets/profile.svg" alt="Profile" />
+        <div id="options">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
       </div>
     </header>
+
+    <main>
+      <div class="title-container">
+        <h1 class="title"></h1>
+        <button class="submit-task">Submit Task</button>
+      </div>
+      <div class="tasks-container"></div>
+      <div class="form-container">
+        <div class="forms"></div>
+      </div>
+    </main>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"></div>
+        <h1>Menu</h1>
+        <button class="close-sidebar" id="close-sidebar">X</button>
+      </div>
+      <div class="sidebar-content">
+      </div>
+    </aside>
+
+    <button class="toggle-sidebar" id="toggle-sidebar">Toggle Sidebar</button>
+
+    <script src="./scripts.js"></script>
   </body>
 </html>
