@@ -94,11 +94,12 @@ function displayForms(tasks) {
 
         const threadContainer = document.createElement("div");
         threadContainer.classList.add("thread-container");
-        threadContainer.appendChild(threadLabel);
         threadContainer.appendChild(threadDropdown);
+        threadContainer.appendChild(threadLabel);
+        
 
-        const formContent = document.createElement("p");
-        formContent.textContent = "Thread A";
+        // const formContent = document.createElement("p");
+        // formContent.textContent = "Thread A";
 
         const subThreadContainer = document.createElement("div");
         subThreadContainer.classList.add("sub-thread-container");
@@ -166,7 +167,7 @@ function displayForms(tasks) {
 
         formBody.appendChild(formDescription);
         formBody.appendChild(threadContainer);
-        formBody.appendChild(formContent);
+        // formBody.appendChild(formContent);
         formBody.appendChild(subThreadContainer);
         formBody.appendChild(dropdownContainer);
         formBody.appendChild(addSubThreadButton);
@@ -270,7 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Error fetching data:", error));
 });
-
 function populateSidebar(tasks) {
   const sidebarContent = document.querySelector(".sidebar-content");
 
@@ -295,13 +295,34 @@ function populateSidebar(tasks) {
   });
 }
 
-const toggleSidebarButton = document.getElementById("toggle-sidebar");
-const closeSidebarButton = document.getElementById("close-sidebar");
-const sidebar = document.getElementById("sidebar");
+document.getElementById("toggleBtn").addEventListener("click", function () {
+  var sidebar = document.getElementById("sidebar");
+  var headerTitle = document.getElementById("header-title");
+  var sidebarContent = document.getElementById("sidebar-content");
+  var shakalaContent = document.getElementById("shakala-content");
 
-toggleSidebarButton.addEventListener("click", () => {
   sidebar.classList.toggle("open");
+
+  if (sidebar.classList.contains("open")) {
+    this.innerHTML = "&larr;";
+    headerTitle.textContent = "Journey Board";
+    sidebarContent.classList.remove("hidden-content");
+    shakalaContent.classList.add("hidden");
+  } else {
+    this.innerHTML = "&rarr;";
+    headerTitle.textContent = "shakala";
+    sidebarContent.classList.add("hidden-content");
+    shakalaContent.classList.remove("hidden");
+  }
 });
+
+// const toggleSidebarButton = document.getElementById("toggle-sidebar");
+// const closeSidebarButton = document.getElementById("close-sidebar");
+// const sidebar = document.getElementById("sidebar");
+
+// toggleSidebarButton.addEventListener("click", () => {
+//   sidebar.classList.toggle("open");
+// });
 
 closeSidebarButton.addEventListener("click", () => {
   sidebar.classList.remove("open");
