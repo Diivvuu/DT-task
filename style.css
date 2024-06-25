@@ -433,15 +433,7 @@ article {
   font-family: "Poppins", sans-serif;
 }
 
-.paragraph {
-  background: #ebebeb;
-  border: none;
-  width: 102px;
-  height: 18px;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
-  size: 12px;
-}
+
 
 .editing {
   display: flex;
